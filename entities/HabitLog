@@ -1,0 +1,36 @@
+{
+  "name": "HabitLog",
+  "type": "object",
+  "properties": {
+    "habit_id": {
+      "type": "string",
+      "description": "ID of the habit"
+    },
+    "date": {
+      "type": "string",
+      "description": "YYYY-MM-DD format date"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "completed",
+        "missed",
+        "skipped"
+      ],
+      "description": "Log status"
+    },
+    "completed_at": {
+      "type": "string",
+      "description": "ISO timestamp of completion"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Optional notes"
+    }
+  },
+  "required": [
+    "habit_id",
+    "date",
+    "status"
+  ]
+}

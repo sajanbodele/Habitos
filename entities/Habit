@@ -1,0 +1,78 @@
+{
+  "name": "Habit",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the habit"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "health",
+        "fitness",
+        "learning",
+        "work",
+        "mindfulness",
+        "creative",
+        "other"
+      ],
+      "description": "Category of the habit"
+    },
+    "frequency": {
+      "type": "string",
+      "enum": [
+        "daily",
+        "5x-week",
+        "3x-week",
+        "weekly",
+        "custom"
+      ],
+      "description": "How often the habit should be done"
+    },
+    "custom_days": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "description": "Custom days (0=Sun, 1=Mon...6=Sat) if frequency is custom"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "easy",
+        "medium",
+        "hard"
+      ],
+      "description": "Difficulty level"
+    },
+    "reminder_time": {
+      "type": "string",
+      "description": "HH:MM format reminder time"
+    },
+    "why_this_habit": {
+      "type": "string",
+      "description": "User motivation text"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "paused",
+        "archived"
+      ],
+      "default": "active",
+      "description": "Current status"
+    },
+    "paused_at": {
+      "type": "string",
+      "description": "ISO timestamp when paused"
+    }
+  },
+  "required": [
+    "name",
+    "category",
+    "frequency",
+    "difficulty"
+  ]
+}
